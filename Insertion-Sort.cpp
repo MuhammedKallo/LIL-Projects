@@ -10,21 +10,21 @@ void printing(int *array, int size)
     cout << endl;
 }
 
-void insertionsort(int *array, int size)
+void insertionsort(int* array, int size)
 {
-    int key, j, i;
-    for(i = 1; i < size; i++)
+    for (int i = 1; i < size; i++)
     {
-        key = array[i];
-        j = i;
-    
-        while(j > 0 && array[j -1] > key)
+        int j = i;
+        
+        while (j > 0 && array[j - 1] > array[j])
         {
+            int temp;
+            temp = array[j];
             array[j] = array[j - 1];
+            array[j - 1] = temp;
             j--;
         }
-        array[j] = key;
-    }   
+    }
 }
     
 int main()
